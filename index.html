@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Privacy policy</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; background: Canvas; color: CanvasText; }
+    main { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    h1 { font-size: 1.6rem; margin: 0 0 .25rem; }
+    h2 { font-size: 1.1rem; margin: 1.75rem 0 .5rem; }
+    .muted { opacity: .7; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Privacy policy</h1>
+    <p class="muted">Private, single-owner collection application. Version 2026-10-29.</p>
+    <section>
+      <h2>What this application is</h2>
+      <p>A private collection and portfolio application used by one person, its owner, to record and analyse their own collectibles. It is not offered to the public and has no other users. Only the configured owner account can sign in.</p>
+      <p>It is operated by that owner for personal use. It is not a business and does not sell, rent, share or advertise with anyone&#39;s data.</p>
+    </section>
+    <section>
+      <h2>eBay data</h2>
+      <p>The application can connect to eBay only for the owner&#39;s own eBay account, and only after the owner approves the connection on eBay&#39;s own page. It requests eBay&#39;s basic access scope and no others.</p>
+      <p>With that consent it reads the owner&#39;s own purchases as a buyer (eBay Trading API GetOrders, at most the last 90 days), only when the owner presses a button. The purchases are shown on screen once and are not stored: no order, item, price, address or message is saved.</p>
+      <p>It does not store any eBay user ID or user name, does not read other eBay users&#39; data, does not list, bid, buy or make offers, and does not send eBay data to any artificial-intelligence tool or other service.</p>
+    </section>
+    <section>
+      <h2>What is stored, and how</h2>
+      <p>The owner&#39;s own eBay developer keys: the App ID and RuName as entered, and the Cert ID encrypted (AES-256-GCM).</p>
+      <p>The tokens eBay issues after consent (an access token and a refresh token), encrypted the same way. They are used only to make the reads the owner starts.</p>
+      <p>For each read: the date window requested, page, order and line counts, and an error type if it failed. No purchase content.</p>
+      <p>An audit trail of actions (for example: keys saved, connected, disconnected, and whether eBay confirmed a revocation), without keys, tokens or purchase content.</p>
+      <p>Exports and backups made from the application leave out the keys, tokens and eBay read records entirely.</p>
+    </section>
+    <section>
+      <h2>How long it is kept</h2>
+      <p>Keys and tokens are kept until the owner disconnects eBay, replaces or removes the keys, or the consent expires (eBay&#39;s refresh tokens last about 18 months). Disconnecting or removing deletes them from the application at once.</p>
+      <p>Read records and audit entries contain no eBay content and are kept as part of the application&#39;s history until the owner deletes them. No automatic deletion schedule has been set.</p>
+    </section>
+    <section>
+      <h2>Disconnecting and deleting</h2>
+      <p>In the application: Connections → eBay → Disconnect (or Remove keys). The tokens are deleted from the application first; the application then asks eBay to revoke the consent and shows eBay&#39;s answer.</p>
+      <p>At eBay: the owner can also remove this application&#39;s access in their eBay account settings.</p>
+      <p>If eBay asks for the owner&#39;s data to be deleted, the same steps apply. Because nothing from purchases is stored, there is no purchase content to delete.</p>
+    </section>
+    <section>
+      <h2>Hosting and security</h2>
+      <p>The application runs on Vercel and its database on Neon. Access requires the owner&#39;s sign-in; the encryption keys are held only in the hosting environment, never in the database.</p>
+      <p>When eBay returns the owner to the application after consent, eBay puts a single-use authorization code in the web address. The hosting provider&#39;s request logs may record that address. The code is exchanged immediately, expires within about five minutes and cannot be used without the owner&#39;s secret key.</p>
+    </section>
+    <section>
+      <h2>Contact</h2>
+      <p>This application has a single user, its owner, who controls all data in it directly through the steps above. No other contact channel has been set up.</p>
+    </section>
+  </main>
+</body>
+</html>
